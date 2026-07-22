@@ -599,6 +599,69 @@
         }
 
         /* ========================================
+           PROJECT99 SECTION
+           ======================================== */
+        .projects {
+            padding: var(--section-padding);
+            background: var(--black);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--dark-grey);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            transition: var(--transition-medium);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .project-card h3 {
+            color: var(--gold);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .project-label {
+            color: var(--light-grey);
+            text-align: center;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background: var(--black);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* ========================================
            WHY CHOOSE US
            ======================================== */
         .why-us {
@@ -1571,6 +1634,48 @@
     </section>
 
     <!-- ==========================================
+         PROJECT99 SECTION
+         ========================================== -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Project99</h2>
+                <span></span>
+            </div>
+            <div class="projects-grid stagger-children">
+                <div class="project-card">
+                    <h3>The Ghetto Video Director</h3>
+                    <p class="project-label">Directed by Prudence Kondowe</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/EgxjqS_fSXM" title="The Ghetto Video Director" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Project 99 - Video 2</h3>
+                    <p class="project-label">Directed by Prudence Kondowe</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/e_WIYav_t50" title="Project 99 Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Project 99 - Video 3</h3>
+                    <p class="project-label">Directed by Prudence Kondowe</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/RX-12SDHfU8" title="Project 99 Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Young Designer Visuals</h3>
+                    <p class="project-label">Showcase Reel</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/XM6CMM7kz64" title="Young Designer Visuals Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          WHY CHOOSE US
          ========================================== -->
     <section class="why-us" id="why-us">
@@ -1681,10 +1786,10 @@
                         With over a decade of experience in creative media and visual storytelling, Prudence Kondowe founded Young Designer Visuals with a vision to transform how brands and individuals communicate through compelling visual content.
                     </p>
                     <p>
-                        Her passion for excellence, combined with a keen eye for detail and innovation, has positioned YDV as one of Malawi's most trusted creative agencies. She leads a talented team dedicated to pushing creative boundaries and delivering results that exceed expectations.
+                        His passion for excellence, combined with a keen eye for detail and innovation, has positioned YDV as one of Malawi's most trusted creative agencies. He leads a talented team dedicated to pushing creative boundaries and delivering results that exceed expectations.
                     </p>
                     <p>
-                        Prudence believes that every brand has a unique story waiting to be told, and she is committed to helping clients discover and share their narratives with the world.
+                        Prudence believes that every brand has a unique story waiting to be told, and he is committed to helping clients discover and share their narratives with the world.
                     </p>
                     <div class="founder-quote">
                         "Creativity is not just what we do—it's how we see the world and help others see it too."
@@ -1729,7 +1834,7 @@
             </div>
             
             <div class="section-title fade-in" style="margin-top: 80px;">
-                <h2>Send Us A Message</h2>
+                <h2>Book Us Now</h2>
                 <span></span>
             </div>
             
