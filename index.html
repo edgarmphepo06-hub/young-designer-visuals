@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Young Designer Visuals (YDV) - A creative media and branding company based in Malawi. Specializing in professional photography, videography, graphic design, and branding services.">
+    <meta name="keywords" content="Young Designer Visuals, YDV, photography, videography, graphic design, branding, Malawi, Prudence Kondowe, media agency">
+    <meta name="author" content="Young Designer Visuals">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Young Designer Visuals - Creative Media & Branding">
+    <meta property="og:description" content="Capturing Stories. Creating Impact. Professional photography, videography, and branding services in Malawi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youngdesignervisuals.com">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/000000/FFD700?text=Young+Designer+Visuals">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Young Designer Visuals - Creative Media & Branding">
+    <meta name="twitter:description" content="Capturing Stories. Creating Impact.">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/000000/FFD700?text=Young+Designer+Visuals">
+    
+    <title>Young Designer Visuals | Creative Media & Branding Agency</title>
+    
+    <style>
+        /* ========================================
+           CSS RESET & BASE STYLES
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette */
+            --black: #0a0a0a;
+            --dark-grey: #1a1a1a;
+            --medium-grey: #2d2d2d;
+            --light-grey: #c0c0c0;
+            --white: #ffffff;
+            --gold: #FFD700;
+            --gold-dark: #DAA520;
+            --gold-light: #FFF8DC;
+            
+            /* Typography */
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-secondary: Georgia, 'Times New Roman', serif;
+            
+            /* Spacing */
+            --section-padding: 100px 20px;
+            --container-max: 1200px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.3);
+            --shadow-gold: 0 4px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========================================
+           TYPOGRAPHY
+           ======================================== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* ========================================
+           NAVIGATION BAR
+           ======================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition-medium);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar.scrolled {
+            padding: 15px 0;
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: var(--transition-fast);
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3));
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            transition: var(--transition-medium);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+            transition: var(--transition-medium);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80') center/cover no-repeat;
+            filter: brightness(0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 .gold-text {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-style: italic;
+            color: var(--light-grey);
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--light-grey);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-buttons {
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--gold);
+        }
+
+        /* ========================================
+           ABOUT SECTION
+           ======================================== */
+        .about {
+            padding: var(--section-padding);
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--light-grey);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           VISION & MISSION CARDS
+           ======================================== */
+        .vision-mission {
+            padding: var(--section-padding);
+            background: var(--dark-grey);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .vm-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 40px;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-medium);
+        }
+
+        .vm-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+
+        .vm-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .vm-card h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .vm-card p {
+            color: var(--light-grey);
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           SERVICES SECTION
+           ======================================== */
+        .services {
+            padding: var(--section-padding);
+            background: var(--black);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--dark-grey);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--light-grey);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           WHY CHOOSE US
+           ======================================== */
+        .why-us {
+            padding: var(--section-padding);
+            background: var(--dark-grey);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: var(--transition-medium);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--black);
+            transition: var(--transition-medium);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .feature-card h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--light-grey);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           STATISTICS COUNTER SECTION
+           ======================================== */
+        .stats {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(218, 165, 32, 0.1));
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--light-grey);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ========================================
+           CLIENTS SECTION
+           ======================================== */
+        .clients {
+            padding: var(--section-padding);
+            background: var(--dark-grey);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .client-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: var(--transition-medium);
+        }
+
+        .client-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .client-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .client-card h3 {
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        /* ========================================
+           FOUNDER SECTION
+           ======================================== */
+        .founder {
+            padding: var(--section-padding);
+            background: var(--black);
+        }
+
+        .founder-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image img {
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            border: 3px solid var(--gold);
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--gold);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .founder-text h3 {
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .founder-text .position {
+            color: var(--light-grey);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .founder-text p {
+            color: var(--light-grey);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .founder-quote {
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin-top: 25px;
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        /* ========================================
+           CONTACT SECTION
+           ======================================== */
+        .contact {
+            padding: var(--section-padding);
+            background: var(--dark-grey);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            transition: var(--transition-medium);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--black);
+        }
+
+        .contact-card h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .contact-card a,
+        .contact-card p {
+            color: var(--light-grey);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .contact-card a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            transition: var(--transition-medium);
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        /* ========================================
+           CONTACT INFO & WHATSAPP FORM
+           ======================================== */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: var(--container-max);
+            margin: 0 auto 60px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            transition: var(--transition-medium);
+        }
+
+        .contact-info-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-info-item .contact-icon {
+            flex-shrink: 0;
+            margin: 0;
+            width: 60px;
+            height: 60px;
+        }
+
+        .contact-info-item h3 {
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-item a,
+        .contact-info-item p {
+            color: var(--light-grey);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .contact-info-item a:hover {
+            color: var(--gold);
+        }
+
+        .whatsapp-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: var(--font-primary);
+            transition: var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(192, 192, 192, 0.6);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 35px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-form {
+                padding: 25px;
+            }
+
+            .contact-info-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: var(--black);
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand .logo-icon-small {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: var(--transition-fast);
+        }
+
+        .footer-brand h3:hover .footer-logo-img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3));
+        }
+
+        .footer-brand p {
+            color: var(--light-grey);
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-grey);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition-medium);
+        }
+
+        .footer-social a:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--light-grey);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom span {
+            color: var(--gold);
+        }
+
+        /* ========================================
+           SCROLL TO TOP BUTTON
+           ======================================== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-medium);
+            box-shadow: var(--shadow-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-7px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Fade-in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger children animations */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; }
+        .stagger-children.visible > *:nth-child(7) { transition-delay: 0.35s; }
+        .stagger-children.visible > *:nth-child(8) { transition-delay: 0.4s; }
+        .stagger-children.visible > *:nth-child(9) { transition-delay: 0.45s; }
+        .stagger-children.visible > *:nth-child(10) { transition-delay: 0.5s; }
+        .stagger-children.visible > *:nth-child(11) { transition-delay: 0.55s; }
+        .stagger-children.visible > *:nth-child(12) { transition-delay: 0.6s; }
+
+        .stagger-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .founder-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .founder-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .founder-quote {
+                border-left: none;
+                border-top: 4px solid var(--gold);
+                padding-left: 0;
+                padding-top: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: left var(--transition-medium);
+                backdrop-filter: blur(15px);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --section-padding: 60px 15px;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .services-grid,
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="youngdesignervisualslogo.jpeg" alt="Young Designer Visuals" class="logo-img">
+                <span>Young Designer</span> Visuals
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#clients" class="nav-link">Clients</a></li>
+                <li><a href="#founder" class="nav-link">Founder</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Creative Media Agency</div>
+            <h1>
+                <span class="gold-text">Young Designer</span> Visuals
+            </h1>
+            <p class="hero-tagline">"Capturing Stories. Creating Impact."</p>
+            <p class="hero-description">
+                We are a premier creative media and branding company based in Malawi, dedicated to transforming your vision into compelling visual narratives that resonate and inspire.
+            </p>
+            <div class="hero-buttons btn-group">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT SECTION
+         ========================================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>About Us</h3>
+                    <h2>Young Designer Visuals (YDV)</h2>
+                    <p>
+                        Young Designer Visuals (YDV) is a creative media and branding company based in Malawi. We specialize in producing high-quality visual content that helps individuals, businesses, churches, organizations, and artists communicate their message with excellence.
+                    </p>
+                    <p>
+                        Founded and led by <strong style="color: var(--gold);">Prudence Kondowe</strong>, YDV is committed to creativity, professionalism, and innovation in every project we undertake. From concept to final delivery, we ensure that every frame, design, and brand identity tells a powerful story.
+                    </p>
+                    <p>
+                        Our passion lies in capturing authentic moments and transforming them into impactful visual experiences that connect with audiences and elevate brands to new heights.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         VISION & MISSION
+         ========================================== -->
+    <section class="vision-mission" id="vision">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Vision & Mission</h2>
+                <span></span>
+            </div>
+            <div class="vm-grid">
+                <div class="vm-card fade-in">
+                    <div class="vm-icon">👁️</div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become Africa's leading creative media powerhouse, empowering brands and individuals to tell their stories through world-class visual content that inspires, engages, and drives meaningful change.
+                    </p>
+                </div>
+                <div class="vm-card fade-in">
+                    <div class="vm-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To deliver exceptional creative solutions that blend artistic excellence with strategic thinking, helping our clients achieve their goals while maintaining the highest standards of quality, innovation, and integrity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES SECTION
+         ========================================== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Services</h2>
+                <span></span>
+            </div>
+            <div class="services-grid stagger-children">
+                <div class="service-card">
+                    <div class="service-icon">📸</div>
+                    <h3>Professional Photography</h3>
+                    <p>High-quality photography for events, portraits, products, and commercial purposes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3>Cinematic Videography</h3>
+                    <p>Professional video production with cinematic quality for weddings, events, and corporate use.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎵</div>
+                    <h3>Music Video Production</h3>
+                    <p>Creative music video production that brings your artistry to life visually.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📹</div>
+                    <h3>Event Coverage</h3>
+                    <p>Comprehensive event documentation with professional videography and photography.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Creative graphic design solutions for print, digital, and marketing materials.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Logo Design & Brand Identity</h3>
+                    <p>Strategic brand identity development including logos, color schemes, and brand guidelines.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Posters</h3>
+                    <p>Eye-catching social media content designed to engage and grow your audience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎞️</div>
+                    <h3>Motion Graphics</h3>
+                    <p>Dynamic motion graphics and animations for presentations, videos, and digital content.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Video Editing</h3>
+                    <p>Professional video editing services with post-production, effects, and color grading.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔴</div>
+                    <h3>Live Streaming</h3>
+                    <p>Professional live streaming services for events, conferences, and online broadcasts.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖨️</div>
+                    <h3>Printing Services</h3>
+                    <p>High-quality printing solutions for business cards, flyers, brochures, and more.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Creative Consulting</h3>
+                    <p>Strategic creative consultation to help you develop impactful visual communication strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         STATISTICS COUNTER
+         ========================================== -->
+    <section class="stats" id="stats">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="200">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Awards Won</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         WHY CHOOSE US
+         ========================================== -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Why Choose Us</h2>
+                <span></span>
+            </div>
+            <div class="why-us-grid stagger-children">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Professional Team</h3>
+                    <p>Our team consists of skilled creative professionals passionate about delivering exceptional results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3>High-Quality Equipment</h3>
+                    <p>We utilize state-of-the-art cameras, lighting, and editing software for premium output.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>We respect deadlines and deliver polished final products without compromising on quality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Competitive rates that make quality creative services accessible to everyone.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Customer-Focused Service</h3>
+                    <p>Your satisfaction is our priority. We work closely with you throughout every project.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Creative Storytelling</h3>
+                    <p>We don't just capture content—we craft compelling stories that leave lasting impressions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================
+         CLIENTS SECTION
+         ========================================== -->
+    <section class="clients" id="clients">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Clients</h2>
+                <span></span>
+            </div>
+            <div class="clients-grid stagger-children">
+                <div class="client-card">
+                    <div class="client-icon">🏢</div>
+                    <h3>Businesses</h3>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">⛪</div>
+                    <h3>Churches</h3>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">🎓</div>
+                    <h3>Universities</h3>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">🤲</div>
+                    <h3>NGOs</h3>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">🏫</div>
+                    <h3>Schools</h3>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">🎤</div>
+                    <h3>Musicians</h3>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">💼</div>
+                    <h3>Corporate Organizations</h3>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">👤</div>
+                    <h3>Individuals</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOUNDER SECTION
+         ========================================== -->
+    <section class="founder" id="founder">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Meet Our Founder</h2>
+                <span></span>
+            </div>
+            <div class="founder-content">
+                <div class="founder-image fade-in">
+                    <img src="prudent.png" alt="Prudence Kondowe - Founder" loading="lazy">
+                </div>
+                <div class="founder-text fade-in">
+                    <h3>Prudence Kondowe</h3>
+                    <p class="position">Director & Creative Leader</p>
+                    <p>
+                        With over a decade of experience in creative media and visual storytelling, Prudence Kondowe founded Young Designer Visuals with a vision to transform how brands and individuals communicate through compelling visual content.
+                    </p>
+                    <p>
+                        Her passion for excellence, combined with a keen eye for detail and innovation, has positioned YDV as one of Malawi's most trusted creative agencies. She leads a talented team dedicated to pushing creative boundaries and delivering results that exceed expectations.
+                    </p>
+                    <p>
+                        Prudence believes that every brand has a unique story waiting to be told, and she is committed to helping clients discover and share their narratives with the world.
+                    </p>
+                    <div class="founder-quote">
+                        "Creativity is not just what we do—it's how we see the world and help others see it too."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT SECTION
+         ========================================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+                <span></span>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-info-item fade-in">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h3>Email</h3>
+                        <a href="mailto:youngdesignervisuals@gmail.com">youngdesignervisuals@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-info-item fade-in">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>Phone</h3>
+                        <a href="tel:+265983176345">+265 983 17 63 45</a>
+                    </div>
+                </div>
+                <div class="contact-info-item fade-in">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Malawi</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title fade-in" style="margin-top: 80px;">
+                <h2>Send Us A Message</h2>
+                <span></span>
+            </div>
+            
+            <form class="whatsapp-form fade-in" id="whatsappForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Your Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary whatsapp-btn">
+                    <span>💬</span> Send via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>
+                    <img src="youngdesignervisualslogo.jpeg" alt="Young Designer Visuals" class="footer-logo-img">
+                </h3>
+                <p>"Creating visuals that tell your story."</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61591452836850" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
+                    <a href="https://vm.tiktok.com/ZS9rPqhtvMdCM-L8XrX/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">🎵</a>
+                    <a href="https://youtu.be/XM6CMM7kz64?si=rK7siDCeCPacIJkB" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Photography</a></li>
+                    <li><a href="#services">Videography</a></li>
+                    <li><a href="#services">Graphic Design</a></li>
+                    <li><a href="#services">Branding</a></li>
+                    <li><a href="#services">Live Streaming</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><a href="mailto:youngdesignervisuals@gmail.com">youngdesignervisuals@gmail.com</a></li>
+                    <li><a href="tel:+265983176345">+265 983 17 63 45</a></li>
+                    <li>Malawi</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span>Young Designer Visuals</span>. All rights reserved. | Designed with passion in Malawi.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">
+                Developed by <a href="https://www.nadadigital.net/" target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: underline;">Next Level Advanced Digital Administration (NADA)</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+    <script>
+        // ========================================
+        // MOBILE MENU TOGGLE
+        // ========================================
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ========================================
+        // STICKY NAVBAR
+        // ========================================
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ========================================
+        // SCROLL TO TOP BUTTON
+        // ========================================
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========================================
+        // ACTIVE NAV LINK HIGHLIGHT
+        // ========================================
+        const sections = document.querySelectorAll('section[id]');
+
+        function highlightNavLink() {
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavLink);
+
+        // ========================================
+        // FADE-IN ON SCROLL (Intersection Observer)
+        // ========================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observe all elements with stagger-children class
+        document.querySelectorAll('.stagger-children').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ========================================
+        // ANIMATED COUNTERS
+        // ========================================
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000; // 2 seconds
+                        const steps = 60;
+                        const increment = target / steps;
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            
+                            if (current >= target) {
+                                counter.textContent = target + '+';
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current) + '+';
+                            }
+                        }, duration / steps);
+                    });
+                    
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            counterObserver.observe(statsSection);
+        }
+
+        // ========================================
+        // PORTFOLIO LIGHTBOX
+        // ========================================
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            if (img) {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            lightboxImg.src = '';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // ========================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#') return;
+                
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    const navbarHeight = navbar.offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navbarHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ========================================
+        // PARALLAX EFFECT FOR HERO (OPTIONAL)
+        // ========================================
+        window.addEventListener('scroll', () => {
+            const heroBg = document.querySelector('.hero-bg');
+            if (heroBg) {
+                const scrolled = window.scrollY;
+                if (scrolled < window.innerHeight) {
+                    heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            }
+        });
+
+        // ========================================
+        // WHATSAPP FORM SUBMISSION
+        // ========================================
+        const whatsappForm = document.getElementById('whatsappForm');
+        const whatsappNumber = '+265983176345'; // YDV WhatsApp number
+
+        whatsappForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `New Message from Young Designer Visuals Website:%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+            
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            
+            whatsappForm.reset();
+        });
+
+        // ========================================
+        // INITIALIZE ON LOAD
+        // ========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            highlightNavLink();
+            
+            // Scroll to top/home on page load or refresh
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            
+            // Trigger fade-in for elements already in view
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('visible');
+                    }
+                });
+                
+                document.querySelectorAll('.stagger-children').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>
