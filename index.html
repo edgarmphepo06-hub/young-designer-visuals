@@ -865,6 +865,25 @@
         }
 
         /* ========================================
+           VIDEOS SECTION
+           ======================================== */
+        .videos {
+            padding: var(--section-padding);
+            background: var(--black);
+        }
+
+        .videos-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .videos-grid .video-card h3 {
+            color: var(--gold);
+            text-align: center;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+        }
+
+        /* ========================================
            CLIENTS SECTION
            ======================================== */
         .clients {
@@ -1793,6 +1812,31 @@
         </div>
     </section>
 
+
+    <!-- ==========================================
+         VIDEOS SECTION
+         ========================================== -->
+    <section class="videos" id="videos">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Work</h2>
+                <span></span>
+            </div>
+            <div class="videos-grid">
+                <div class="video-card fade-in">
+                    <h3>Featured Video</h3>
+                    <div class="video-frame" data-video-id="XM6CMM7kz64">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <p style="color: var(--light-grey); font-size: 0.95rem;">Click to play video</p>
+                            <p class="video-error-msg">YouTube video</p>
+                        </div>
+                    </div>
+                    <a href="https://youtu.be/XM6CMM7kz64" target="_blank" rel="noopener noreferrer" class="video-link">Watch on YouTube →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ==========================================
          CLIENTS SECTION
