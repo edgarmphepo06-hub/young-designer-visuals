@@ -477,6 +477,8 @@
             padding: 5px;
             background: none;
             border: none;
+            position: relative;
+            z-index: 9999;
         }
 
         .menu-toggle span {
@@ -1495,6 +1497,7 @@
                 transition: left var(--transition-medium);
                 backdrop-filter: blur(15px);
                 overflow-x: hidden;
+                z-index: 1000;
             }
 
             .nav-menu.active {
@@ -1507,7 +1510,7 @@
 
             .menu-toggle {
                 display: flex;
-                z-index: 1001;
+                z-index: 9999;
             }
 
             .hero h1 {
