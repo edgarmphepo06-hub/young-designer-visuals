@@ -70,6 +70,7 @@
         html {
             scroll-behavior: smooth;
             font-size: 16px;
+            overflow-x: hidden;
         }
 
         body {
@@ -1513,6 +1514,11 @@
             .section-title {
                 margin-bottom: 40px;
             }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1547,11 +1553,30 @@
             }
 
             .services-grid,
+            .videos-grid,
             .clients-grid {
                 grid-template-columns: 1fr;
             }
 
+            .videos-grid {
+                justify-items: center;
+                gap: 30px;
+            }
+
+            .videos-grid .video-card {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .videos-grid .video-card h3 {
+                text-align: center;
+            }
+
             .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vm-grid {
                 grid-template-columns: 1fr;
             }
         }
