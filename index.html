@@ -873,7 +873,10 @@
         }
 
         .videos-grid {
-            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: var(--container-max);
             margin: 0 auto;
         }
 
@@ -1577,6 +1580,7 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#videos" class="nav-link">Videos</a></li>
                 <li><a href="#clients" class="nav-link">Clients</a></li>
                 <li><a href="#founder" class="nav-link">Founder</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -1824,15 +1828,34 @@
             </div>
             <div class="videos-grid">
                 <div class="video-card fade-in">
-                    <h3>Featured Video</h3>
-                    <div class="video-frame" data-video-id="XM6CMM7kz64">
+                    <h3>🎬 The Ghetto Video Director</h3>
+                    <div class="video-frame" data-video-id="EgxjqS_fSXM">
                         <div class="video-placeholder">
                             <div class="play-button">▶</div>
-                            <p style="color: var(--light-grey); font-size: 0.95rem;">Click to play video</p>
-                            <p class="video-error-msg">YouTube video</p>
+                            <span style="color:var(--gold);font-size:0.85rem;font-weight:600;">Click to Play</span>
+                            <p class="video-error-msg">Watch our latest production</p>
                         </div>
                     </div>
-                    <a href="https://youtu.be/XM6CMM7kz64" target="_blank" rel="noopener noreferrer" class="video-link">Watch on YouTube →</a>
+                </div>
+                <div class="video-card fade-in">
+                    <h3>Director Prudent - Behind the Lens</h3>
+                    <div class="video-frame" data-video-id="e_WIYav_t50">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <span style="color:var(--gold);font-size:0.85rem;font-weight:600;">Click to Play</span>
+                            <p class="video-error-msg">Behind the scenes with our director</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card fade-in">
+                    <h3>YDV Production Showcase</h3>
+                    <div class="video-frame" data-video-id="RX-12SDHfU8">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <span style="color:var(--gold);font-size:0.85rem;font-weight:600;">Click to Play</span>
+                            <p class="video-error-msg">Showcasing YDV's best work</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2217,24 +2240,37 @@
         }
 
         // ========================================
-        // VIDEO PLAYER - LOAD ON CLICK
+        // VIDEO PLAYER - LOAD ON CLICK (FIXED for Error 153)
         // ========================================
         document.querySelectorAll('.video-frame').forEach(frame => {
             const placeholder = frame.querySelector('.video-placeholder');
-            const videoId = frame.dataset.videoId;
+            let videoId = frame.dataset.videoId;
+
+            // If no data-video-id, try extracting from existing iframe
+            if (!videoId) {
+                const existingIframe = frame.querySelector('iframe');
+                if (existingIframe) {
+                    const match = existingIframe.src.match(/\/embed\/([^?]+)/);
+                    if (match) {
+                        videoId = match[1];
+                    }
+                }
+            }
 
             if (placeholder && videoId) {
                 placeholder.addEventListener('click', function() {
                     try {
-                        // Create iframe dynamically on click
+                        // Create iframe dynamically on click using youtube-nocookie.com
                         const iframe = document.createElement('iframe');
-                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                        // Use youtube-nocookie.com to avoid cookie consent issues and Error 153
+                        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1`;
                         
                         const card = this.closest('.video-card');
                         const titleEl = card ? card.querySelector('h3') : null;
                         iframe.title = titleEl ? titleEl.textContent : 'YouTube Video';
                         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
                         iframe.allowFullscreen = true;
+                        iframe.loading = 'lazy';
                         
                         // Clear placeholder and append iframe
                         frame.innerHTML = '';
@@ -2242,10 +2278,20 @@
                         frame.classList.add('loaded');
                     } catch (err) {
                         console.error('Video load error:', err);
-                        // Fallback: show error message
+                        // Fallback: show clickable error message with direct link
                         frame.innerHTML = '<div class="video-placeholder" style="cursor:default"><p style="color:#ff6b6b;padding:20px;text-align:center">⚠️ Video could not be loaded.<br><a href="https://youtu.be/' + videoId + '" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;margin-top:10px;display:inline-block">Watch on YouTube instead</a></p></div>';
                     }
                 });
+            }
+        });
+        // ========================================
+        // FALLBACK: If iframes are already present (no data-video-id), ensure they use proper domain
+        // ========================================
+        document.querySelectorAll('.video-frame iframe[src*="youtube.com/embed"]').forEach(iframe => {
+            const currentSrc = iframe.src;
+            // Replace youtube.com with youtube-nocookie.com for better compatibility
+            if (currentSrc.includes('youtube.com/')) {
+                iframe.src = currentSrc.replace('youtube.com/', 'youtube-nocookie.com/');
             }
         });
         // ========================================
