@@ -153,6 +153,95 @@
             list-style: none;
         }
 
+        .video-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 18px;
+            background: linear-gradient(135deg, #111111, #000000);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        }
+
+        .video-frame video,
+        .video-frame iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: #000000;
+            border: 0;
+        }
+
+        .video-frame video {
+            object-fit: cover;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+        }
+
+        .video-placeholder:hover {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+        }
+
+        .play-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--black);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .video-error-msg {
+            color: var(--light-grey);
+            font-size: 0.85rem;
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        .video-frame.loaded .video-placeholder {
+            display: none;
+        }
+
+        .video-frame.loaded iframe {
+            display: block !important;
+        }
+
+        .video-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
         .container {
             max-width: var(--container-max);
             margin: 0 auto;
@@ -242,6 +331,18 @@
             transform: translateY(-3px);
         }
 
+        .btn-youtube {
+            background: #FF0000;
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-youtube:hover {
+            background: #CC0000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(255, 0, 0, 0.5);
+        }
+
         .btn-group {
             display: flex;
             gap: 20px;
@@ -310,7 +411,7 @@
         }
 
         .logo-img {
-            height: 45px;
+            height: clamp(35px, 5vw, 50px);
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -437,10 +538,10 @@
         }
 
         .hero-logo {
-            width: 140px;
-            height: 140px;
-            object-fit: contain;
-            margin: 0 auto 24px;
+            width: clamp(90px, 15vw, 160px);
+            height: clamp(90px, 15vw, 160px);
+            object-fit: cover;
+            margin: 0 auto clamp(16px, 2vw, 24px);
             border-radius: 50%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease 0.1s both;
@@ -1125,7 +1226,7 @@
         }
 
         .footer-logo-img {
-            height: 40px;
+            height: clamp(30px, 4vw, 40px);
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -1487,6 +1588,7 @@
             </p>
             <div class="hero-buttons btn-group">
                 <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="https://youtube.com/@carolynngwira" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">▶ Subscribe on YouTube</a>
                 <a href="#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -1847,7 +1949,7 @@
                 <div class="footer-social">
                     <a href="https://www.facebook.com/profile.php?id=61591452836850" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
                     <a href="https://vm.tiktok.com/ZS9rPqhtvMdCM-L8XrX/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">🎵</a>
-                    <a href="https://youtu.be/XM6CMM7kz64?si=rK7siDCeCPacIJkB" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶️</a>
+                    <a href="https://youtube.com/@carolynngwira" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶️</a>
                 </div>
             </div>
             
@@ -2071,33 +2173,37 @@
         }
 
         // ========================================
-        // PORTFOLIO LIGHTBOX
+        // VIDEO PLAYER - LOAD ON CLICK
         // ========================================
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
+        document.querySelectorAll('.video-frame').forEach(frame => {
+            const placeholder = frame.querySelector('.video-placeholder');
+            const videoId = frame.dataset.videoId;
 
-        function openLightbox(element) {
-            const img = element.querySelector('img');
-            if (img) {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-            lightboxImg.src = '';
-        }
-
-        // Close lightbox with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                closeLightbox();
+            if (placeholder && videoId) {
+                placeholder.addEventListener('click', function() {
+                    try {
+                        // Create iframe dynamically on click
+                        const iframe = document.createElement('iframe');
+                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                        
+                        const card = this.closest('.video-card');
+                        const titleEl = card ? card.querySelector('h3') : null;
+                        iframe.title = titleEl ? titleEl.textContent : 'YouTube Video';
+                        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                        iframe.allowFullscreen = true;
+                        
+                        // Clear placeholder and append iframe
+                        frame.innerHTML = '';
+                        frame.appendChild(iframe);
+                        frame.classList.add('loaded');
+                    } catch (err) {
+                        console.error('Video load error:', err);
+                        // Fallback: show error message
+                        frame.innerHTML = '<div class="video-placeholder" style="cursor:default"><p style="color:#ff6b6b;padding:20px;text-align:center">⚠️ Video could not be loaded.<br><a href="https://youtu.be/' + videoId + '" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;margin-top:10px;display:inline-block">Watch on YouTube instead</a></p></div>';
+                    }
+                });
             }
         });
-
         // ========================================
         // SMOOTH SCROLL FOR ANCHOR LINKS
         // ========================================
