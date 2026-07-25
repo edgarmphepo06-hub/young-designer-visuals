@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Young Designer Visuals (YDV) - A creative media and branding company based in Malawi. Specializing in professional photography, videography, graphic design, and branding services.">
-    <meta name="keywords" content="Young Designer Visuals, YDV, photography, videography, graphic design, branding, Malawi, Prudent Kondowe, media agency">
+    <meta name="keywords" content="Young Designer Visuals, YDV, photography, videography, graphic design, branding, Malawi, Prudent Konowe, media agency">
     <meta name="author" content="Young Designer Visuals">
     <meta name="robots" content="index, follow">
     
@@ -23,6 +23,8 @@
     <meta name="twitter:image" content="https://via.placeholder.com/1200x630/000000/FFD700?text=Young+Designer+Visuals">
     
     <title>Young Designer Visuals | Creative Media & Branding Agency</title>
+    <link rel="icon" href="youngdesignervisualslogo.jpeg" type="image/jpeg">
+    <link rel="shortcut icon" href="youngdesignervisualslogo.jpeg" type="image/jpeg">
     
     <style>
         /* ========================================
@@ -68,7 +70,6 @@
         html {
             scroll-behavior: smooth;
             font-size: 16px;
-            overflow-x: hidden;
         }
 
         body {
@@ -77,6 +78,63 @@
             color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        .loader-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--black), #111111);
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        body.page-loaded .loader-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 215, 0, 0.25);
+            border-top-color: var(--gold);
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+        }
+
+        .loader-text {
+            color: var(--white);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .page-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        body.page-loaded .page-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         img {
@@ -378,6 +436,16 @@
             animation: fadeInDown 1s ease;
         }
 
+        .hero-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease 0.1s both;
+        }
+
         .hero h1 {
             margin-bottom: 20px;
             animation: fadeInUp 1s ease 0.2s both;
@@ -597,69 +665,6 @@
         .service-card p {
             color: var(--light-grey);
             font-size: 0.95rem;
-        }
-
-        /* ========================================
-           PROJECT99 SECTION
-           ======================================== */
-        .projects {
-            padding: var(--section-padding);
-            background: var(--black);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: var(--container-max);
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: var(--dark-grey);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 25px;
-            transition: var(--transition-medium);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: rgba(255, 215, 0, 0.3);
-        }
-
-        .project-card h3 {
-            color: var(--gold);
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .project-label {
-            color: var(--light-grey);
-            text-align: center;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            background: var(--black);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 10px;
         }
 
         /* ========================================
@@ -1345,7 +1350,6 @@
                 top: 0;
                 left: -100%;
                 width: 100%;
-                max-width: 100vw;
                 height: 100vh;
                 background: rgba(10, 10, 10, 0.98);
                 flex-direction: column;
@@ -1354,7 +1358,6 @@
                 gap: 30px;
                 transition: left var(--transition-medium);
                 backdrop-filter: blur(15px);
-                overflow-x: hidden;
             }
 
             .nav-menu.active {
@@ -1432,7 +1435,14 @@
     </style>
 </head>
 <body>
+    <div class="loader-screen" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-logo"></div>
+            <div class="loader-text">Loading YDV</div>
+        </div>
+    </div>
 
+    <div class="page-content">
     <!-- ==========================================
          NAVIGATION BAR
          ========================================== -->
@@ -1466,6 +1476,7 @@
     <section class="hero" id="home">
         <div class="hero-bg"></div>
         <div class="hero-content">
+            <img src="youngdesignervisualslogo.jpeg" alt="Young Designer Visuals logo" class="hero-logo">
             <div class="hero-badge">Creative Media Agency</div>
             <h1>
                 <span class="gold-text">Young Designer</span> Visuals
@@ -1500,7 +1511,7 @@
                         Young Designer Visuals (YDV) is a creative media and branding company based in Malawi. We specialize in producing high-quality visual content that helps individuals, businesses, churches, organizations, and artists communicate their message with excellence.
                     </p>
                     <p>
-                        Founded and led by <strong style="color: var(--gold);">Prudent Kondowe</strong>, YDV is committed to creativity, professionalism, and innovation in every project we undertake. From concept to final delivery, we ensure that every frame, design, and brand identity tells a powerful story.
+                        Founded and led by <strong style="color: var(--gold);">Prudent Konowe</strong>, YDV is committed to creativity, professionalism, and innovation in every project we undertake. From concept to final delivery, we ensure that every frame, design, and brand identity tells a powerful story.
                     </p>
                     <p>
                         Our passion lies in capturing authentic moments and transforming them into impactful visual experiences that connect with audiences and elevate brands to new heights.
@@ -1637,48 +1648,6 @@
     </section>
 
     <!-- ==========================================
-         PROJECT99 SECTION
-         ========================================== -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Project99</h2>
-                <span></span>
-            </div>
-            <div class="projects-grid stagger-children">
-                <div class="project-card">
-                    <h3>Project 99 - Video 2</h3>
-                    <p class="project-label">Directed by Prudent Kondowe</p>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/EgxjqS_fSXM" title="The Ghetto Video Director" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Project 99 - Video 2</h3>
-                    <p class="project-label">Directed by Prudent Kondowe</p>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/e_WIYav_t50" title="Project 99 Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Project 99 - Video 3</h3>
-                    <p class="project-label">Directed by Prudent Kondowe</p>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/RX-12SDHfU8" title="Project 99 Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Young Designer Visuals</h3>
-                    <p class="project-label">Showcase Reel</p>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/XM6CMM7kz64" title="Young Designer Visuals Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
          WHY CHOOSE US
          ========================================== -->
     <section class="why-us" id="why-us">
@@ -1780,13 +1749,13 @@
             </div>
             <div class="founder-content">
                 <div class="founder-image fade-in">
-                    <img src="prudent.png" alt="Prudent Kondowe - Founder" loading="lazy">
+                    <img src="prudent.png" alt="Prudent Konowe - Founder" loading="lazy">
                 </div>
                 <div class="founder-text fade-in">
-                    <h3>Prudent Kondowe</h3>
+                    <h3>Prudent Konowe</h3>
                     <p class="position">Director & Creative Leader</p>
                     <p>
-                        With over a decade of experience in creative media and visual storytelling, Prudent Kondowe founded Young Designer Visuals with a vision to transform how brands and individuals communicate through compelling visual content.
+                        With over a decade of experience in creative media and visual storytelling, Prudent Konowe founded Young Designer Visuals with a vision to transform how brands and individuals communicate through compelling visual content.
                     </p>
                     <p>
                         His passion for excellence, combined with a keen eye for detail and innovation, has positioned YDV as one of Malawi's most trusted creative agencies. He leads a talented team dedicated to pushing creative boundaries and delivering results that exceed expectations.
@@ -1837,7 +1806,7 @@
             </div>
             
             <div class="section-title fade-in" style="margin-top: 80px;">
-                <h2>Book Us Now</h2>
+                <h2>Send Us A Message</h2>
                 <span></span>
             </div>
             
@@ -1914,12 +1883,13 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 <span>Young Designer Visuals</span>. All rights reserved. | Designed with passion in Malawi.</p>
+            <p>&copy; <span id="currentYear">2026</span> <span>Young Designer Visuals</span>. All rights reserved. | Designed with passion in Malawi.</p>
             <p style="margin-top: 10px; font-size: 0.85rem;">
                 Developed by <a href="https://www.nadadigital.net/" target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: underline;">Next Level Advanced Digital Administration (NADA)</a>
             </p>
         </div>
     </footer>
+    </div>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
@@ -1936,6 +1906,35 @@
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
         const navLinks = document.querySelectorAll('.nav-link');
+        const currentYearElement = document.getElementById('currentYear');
+
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        const resetToHome = () => {
+            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                homeSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }
+            history.replaceState(null, '', '#home');
+        };
+
+        window.addEventListener('DOMContentLoaded', resetToHome);
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.classList.add('page-loaded');
+                resetToHome();
+            }, 2000);
+        });
+        window.addEventListener('pageshow', resetToHome);
 
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
