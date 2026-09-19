@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Young Designer Visuals (YDV) - A creative media and branding company based in Malawi. Specializing in professional photography, videography, graphic design, and branding services.">
-    <meta name="keywords" content="Young Designer Visuals, YDV, photography, videography, graphic design, branding, Malawi, Prudent Konowe, media agency">
+    <meta name="keywords" content="Young Designer Visuals, YDV, photography, videography, graphic design, branding, Malawi, Prudent Kondowe, media agency">
     <meta name="author" content="Young Designer Visuals">
     <meta name="robots" content="index, follow">
     
@@ -581,7 +581,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80') center/cover no-repeat;
+            background: url('cover.jpeg') center/cover no-repeat;
             filter: brightness(0.4);
             z-index: 1;
             width: 100%;
@@ -1001,6 +1001,194 @@
             font-size: 1.1rem;
         }
 
+        /* PROFESSIONAL SECTION MEDIA */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: var(--container-max);
+        }
+        .about-media {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,215,0,0.25);
+            box-shadow: var(--shadow-lg);
+        }
+        .about-media img {
+            width: 100%;
+            min-height: 380px;
+            max-height: 520px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .about-media:hover img { transform: scale(1.05); }
+        .about-media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 45%);
+            pointer-events: none;
+        }
+        .about-media figcaption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            z-index: 2;
+            padding: 22px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .about-media figcaption span:first-child {
+            color: var(--white);
+            font-weight: 700;
+        }
+        .media-badge {
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 7px 14px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .about-badges span {
+            border: 1px solid rgba(255,215,0,0.35);
+            color: var(--gold);
+            background: rgba(255,215,0,0.08);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .showcase { padding: var(--section-padding); }
+        .showcase.dark { background: var(--black); }
+        .showcase.grey { background: var(--dark-grey); }
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 50px;
+            align-items: center;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+        .showcase-grid.reverse { direction: rtl; }
+        .showcase-grid.reverse > * { direction: ltr; }
+        .showcase-media {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: var(--shadow-lg);
+        }
+        .showcase-media img {
+            width: 100%;
+            min-height: 320px;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .showcase-media:hover img { transform: scale(1.04); }
+        .showcase-media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,215,0,0.12), transparent 40%, rgba(0,0,0,0.45) 100%);
+            pointer-events: none;
+        }
+        .float-card {
+            position: absolute;
+            bottom: 20px; left: 20px; right: 20px;
+            z-index: 2;
+            background: rgba(10,10,10,0.72);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 14px;
+            padding: 16px 18px;
+        }
+        .float-card strong { color: var(--white); display: block; }
+        .float-card small { color: var(--light-grey); }
+        .float-card .stars { color: var(--gold); letter-spacing: 2px; }
+        .check-list { list-style: none; margin: 22px 0 28px; display: grid; gap: 12px; }
+        .check-list li { color: var(--light-grey); display: flex; gap: 12px; line-height: 1.6; }
+        .check-list li::before {
+            content: '✓';
+            flex-shrink: 0;
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            background: rgba(255,215,0,0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.85rem;
+        }
+        .quote-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 22px;
+            margin-top: 22px;
+            color: var(--light-grey);
+            font-style: italic;
+            line-height: 1.7;
+        }
+        .quote-card strong { display: block; margin-top: 12px; color: var(--gold); font-style: normal; }
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 30px;
+            max-width: var(--container-max);
+            margin: 0 auto 60px;
+        }
+        .contact-photo {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            min-height: 340px;
+            border: 1px solid rgba(255,215,0,0.25);
+            box-shadow: var(--shadow-md);
+        }
+        .contact-photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+        .contact-photo-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.25) 55%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 28px;
+        }
+        .contact-photo-overlay h3 { color: var(--white); margin-bottom: 8px; }
+        .contact-photo-overlay p { color: var(--light-grey); margin-bottom: 16px; }
+        .overlay-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+        .overlay-pills a {
+            background: rgba(255,215,0,0.95);
+            color: #000; font-weight: 700; font-size: 0.9rem;
+            padding: 10px 18px; border-radius: 50px;
+        }
+        .overlay-pills a.ghost {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        @media (max-width: 900px) {
+            .about-content, .showcase-grid, .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+            .about-media img { min-height: 280px; }
+            .showcase-media img { min-height: 260px; }
+            .contact-photo { min-height: 300px; }
+            .contact-photo img { position: relative; min-height: 300px; max-height: 380px; }
+            .float-card { left: 12px; right: 12px; bottom: 12px; }
+        }
         /* ========================================
            FOUNDER SECTION
            ======================================== */
@@ -1175,6 +1363,13 @@
             border-radius: 15px;
             padding: 25px;
             transition: var(--transition-medium);
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .contact-info-item > div {
+            min-width: 0;
+            flex: 1;
         }
 
         .contact-info-item:hover {
@@ -1205,6 +1400,14 @@
 
         .contact-info-item a:hover {
             color: var(--gold);
+        }
+        .contact-info-item a[href^="mailto:"] {
+            word-break: break-all;
+            overflow-wrap: anywhere;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            display: inline-block;
+            max-width: 100%;
         }
 
         .whatsapp-form {
@@ -2000,7 +2203,9 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#videos" class="nav-link">Videos</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#clients" class="nav-link">Clients</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
                 <li><a href="#founder" class="nav-link">Founder</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -2049,6 +2254,10 @@
     <section class="about" id="about">
         <div class="container">
             <div class="about-content">
+                <figure class="about-media fade-in">
+                    <img src="about-us.jpeg" alt="Young Designer Visuals creative team at work" loading="lazy">
+                    <figcaption><span>Creativity in Action</span></figcaption>
+                </figure>
                 <div class="about-text fade-in">
                     <h3>About Us</h3>
                     <h2>Young Designer Visuals (YDV)</h2>
@@ -2056,11 +2265,16 @@
                         Young Designer Visuals (YDV) is a creative media and branding company based in Malawi. We specialize in producing high-quality visual content that helps individuals, businesses, churches, organizations, and artists communicate their message with excellence.
                     </p>
                     <p>
-                        Founded and led by <strong style="color: var(--gold);">Prudent Konowe</strong>, YDV is committed to creativity, professionalism, and innovation in every project we undertake. From concept to final delivery, we ensure that every frame, design, and brand identity tells a powerful story.
+                        Founded and led by <strong style="color: var(--gold);">Prudent Kondowe</strong>, YDV is committed to creativity, professionalism, and innovation in every project we undertake. From concept to final delivery, we ensure that every frame, design, and brand identity tells a powerful story.
                     </p>
                     <p>
                         Our passion lies in capturing authentic moments and transforming them into impactful visual experiences that connect with audiences and elevate brands to new heights.
                     </p>
+                    <div class="about-badges">
+                        <span>500+ Projects</span>
+                        <span>200+ Happy Clients</span>
+                        <span>10+ Years Experience</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2193,6 +2407,36 @@
     </section>
 
     <!-- ==========================================
+         PROJECTS DELIVERED SHOWCASE
+         ========================================== -->
+    <section class="showcase dark" id="projects">
+        <div class="showcase-grid">
+            <div class="showcase-media fade-in">
+                <img src="projects-delivered.jpeg" alt="YDV projects delivered - photography and videography showcase" loading="lazy">
+                <div class="float-card">
+                    <div><strong>500+ Projects Delivered</strong><small>Weddings • Music Videos • Corporate • Events</small></div>
+                </div>
+            </div>
+            <div class="fade-in">
+                <div class="section-title" style="text-align:left;margin-bottom:20px;">
+                    <h2>Projects Delivered</h2>
+                    <span style="margin:0;"></span>
+                </div>
+                <p style="color:var(--light-grey);line-height:1.8;">From intimate portraits to large-scale productions, every YDV delivery meets broadcast quality — on time, on brand, and ready to share.</p>
+                <ul class="check-list">
+                    <li>Weddings, engagements & family films with cinematic editing</li>
+                    <li>Music videos, commercials & brand documentaries</li>
+                    <li>Church, NGO & corporate event coverage with live streaming</li>
+                </ul>
+                <div class="btn-group" style="justify-content:flex-start;">
+                    <a href="#videos" class="btn btn-primary">View Our Work</a>
+                    <a href="#contact" class="btn btn-secondary">Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          WHY CHOOSE US
          ========================================== -->
     <section class="why-us" id="why-us">
@@ -2295,6 +2539,36 @@
     </section>
 
     <!-- ==========================================
+         TESTIMONIALS SHOWCASE
+         ========================================== -->
+    <section class="showcase grey" id="testimonials">
+        <div class="showcase-grid reverse">
+            <div class="showcase-media fade-in">
+                <img src="testimonials.jpeg" alt="Happy YDV clients sharing testimonials" loading="lazy">
+                <div class="float-card">
+                    <div class="stars">★★★★★</div>
+                    <div><strong>Loved by 200+ Clients</strong><small>Event Planners • Artists • Couples • Brands</small></div>
+                </div>
+            </div>
+            <div class="fade-in">
+                <div class="section-title" style="text-align:left;margin-bottom:20px;">
+                    <h2>Client Testimonials</h2>
+                    <span style="margin:0;"></span>
+                </div>
+                <p style="color:var(--light-grey);line-height:1.8;">Real stories from real clients. Our reputation is built on trust, quality and unforgettable delivery.</p>
+                <div class="quote-card">
+                    "YDV turned our wedding into a cinematic masterpiece. Professional, punctual and so creative — we relive that day every time we watch the film."
+                    <strong>— Blessings & Chikondi, Lilongwe</strong>
+                </div>
+                <div class="quote-card">
+                    "From logo to music video to social media kit, they elevated our entire brand. Best creative partner we've worked with in Malawi."
+                    <strong>— Faith Music Group</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          CLIENTS SECTION
          ========================================== -->
     <section class="clients" id="clients">
@@ -2351,13 +2625,13 @@
             </div>
             <div class="founder-content">
                 <div class="founder-image fade-in">
-                    <img src="prudent.png" alt="Prudent Konowe - Founder" loading="lazy">
+                    <img src="prudent.png" alt="Prudent Kondowe - Founder" loading="lazy">
                 </div>
                 <div class="founder-text fade-in">
-                    <h3>Prudent Konowe</h3>
+                    <h3>Prudent Kondowe</h3>
                     <p class="position">Director & Creative Leader</p>
                     <p>
-                        With over a decade of experience in creative media and visual storytelling, Prudent Konowe founded Young Designer Visuals with a vision to transform how brands and individuals communicate through compelling visual content.
+                        With over a decade of experience in creative media and visual storytelling, Prudent Kondowe founded Young Designer Visuals with a vision to transform how brands and individuals communicate through compelling visual content.
                     </p>
                     <p>
                         His passion for excellence, combined with a keen eye for detail and innovation, has positioned YDV as one of Malawi's most trusted creative agencies. He leads a talented team dedicated to pushing creative boundaries and delivering results that exceed expectations.
@@ -2381,9 +2655,22 @@
             <div class="section-title fade-in">
                 <h2>Get In Touch</h2>
                 <span></span>
+                <p>Ready to bring your vision to life? Contact us today — we respond within 24 hours!</p>
             </div>
-            
-            <div class="contact-info">
+
+            <div class="contact-layout">
+                <div class="contact-photo fade-in">
+                    <img src="contact-us.jpeg" alt="Contact Young Designer Visuals studio" loading="lazy">
+                    <div class="contact-photo-overlay">
+                        <h3>Let's Create Together</h3>
+                        <p>Lilongwe, Malawi • Mon–Sat, 8am–6pm</p>
+                        <div class="overlay-pills">
+                            <a href="https://wa.me/265880671510" target="_blank" rel="noopener">WhatsApp Us</a>
+                            <a class="ghost" href="tel:+265880671510">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+            <div class="contact-info" style="margin:0;">
                 <div class="contact-info-item fade-in">
                     <div class="contact-icon">✉️</div>
                     <div>
@@ -2405,6 +2692,7 @@
                         <p>Malawi</p>
                     </div>
                 </div>
+            </div>
             </div>
             
             <div class="section-title fade-in" style="margin-top: 80px;">
