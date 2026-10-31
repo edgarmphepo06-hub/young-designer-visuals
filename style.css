@@ -3,6 +3,7 @@
 :root { --primary-yellow:#FFC400; --royal-blue:#1246D5; --electric-blue:#414BFF; --deep-blue:#092C91; --dark-charcoal:#353535; --white:#FFFFFF; --black:#080808; --supporting-navy:#101B68; --cyan:#00E5FF; }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Montserrat','Poppins',sans-serif; background:#f7f8fc; color:var(--dark-charcoal); line-height:1.6; overflow-x:hidden; }
+html, body { overflow-x:hidden; }
 nav { position:fixed; top:0; width:100%; z-index:1000; display:flex; justify-content:center; padding:1rem; background:rgba(255,255,255,.85); backdrop-filter:blur(8px); }
 .nav-bar { background:var(--primary-yellow); padding:.6rem 1.5rem; border-radius:50px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 .nav-bar ul { list-style:none; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
@@ -68,7 +69,7 @@ img { max-width:100%; height:auto; display:block; border-radius:20px; box-shadow
 }
 .team-photos { background: var(--royal-blue); padding: 1.5rem; border-radius: 24px; }
 .team-photo { width:120px; height:120px; object-fit:cover; border-radius:50%; border:3px solid var(--primary-yellow); }
-.menu-toggle { display:none; background:none; border:none; font-size:1.8rem; cursor:pointer; } @media (max-width:768px){ .menu-toggle { display:block; } #navMenu { display:none; } #navMenu.open { display:flex; } }
+.menu-toggle { position:fixed; top:1rem; left:1rem; z-index:1001; background:var(--primary-yellow); border:none; font-size:1.8rem; cursor:pointer; padding:.5rem; border-radius:8px; }
 .team-photos { flex-direction: row; }
 .team-photos { display:flex !important; flex-direction:row !important; flex-wrap:nowrap !important; gap:1rem; justify-content:center; align-items:center; }
 .heading { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; } .heading .intro { font-size:1.3rem; font-weight:700; color:var(--deep-blue); } .heading span { background:var(--primary-yellow); color:var(--black); padding:.3rem .8rem; border-radius:20px; font-weight:700; } .menu-toggle { margin-right:auto; }
