@@ -13,6 +13,7 @@ section { padding:110px 2rem 4rem; max-width:1200px; margin:0 auto; min-height:1
 .section-title h2 { font-size:2.5rem; color:var(--deep-blue); text-transform:uppercase; font-weight:800; letter-spacing:1px; }
 .section-title h2 span { color:var(--primary-yellow); }
 .gradient-panel { background:linear-gradient(135deg,var(--electric-blue),var(--deep-blue)); border-radius:24px; padding:2rem; color:#fff; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+.cover-card { background:var(--royal-blue); border-radius:24px; padding:2rem; box-shadow:0 10px 30px rgba(0,0,0,.08); color:#fff; }
 .labels { display:flex; gap:.5rem; margin-bottom:1rem; flex-wrap:wrap; }
 .label { background:var(--primary-yellow); color:var(--black); padding:.3rem .8rem; border-radius:20px; font-weight:700; font-size:.85rem; }
 .text-boxes { display:flex; flex-direction:column; gap:1rem; }
@@ -24,7 +25,7 @@ section { padding:110px 2rem 4rem; max-width:1200px; margin:0 auto; min-height:1
 .tagline { text-align:center; font-weight:700; margin-top:1.5rem; color:var(--deep-blue); letter-spacing:1px; }
 .founder-profile { display:flex; gap:2rem; flex-wrap:wrap; align-items:center; justify-content:center; }
 .photo img { width:320px; height:320px; object-fit:cover; border-radius:20px; box-shadow:0 12px 30px rgba(0,0,0,.15); }
-.info-panel { background:#fff; padding:2rem; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); max-width:520px; }
+.info-panel { background:transparent; padding:2rem; border-radius:16px; box-shadow:none; max-width:520px; }
 .info-panel h3 { color:var(--deep-blue); margin-bottom:1rem; font-weight:800; }
 .info-panel li { margin-bottom:.5rem; }
 .company-description p { margin-bottom:.8rem; }
@@ -36,7 +37,7 @@ section { padding:110px 2rem 4rem; max-width:1200px; margin:0 auto; min-height:1
 .card:hover, .social-card:hover { transform:translateY(-4px); }
 .card.dark { background:var(--deep-blue); color:#fff; }
 .card .name { margin-top:.8rem; font-weight:700; color:var(--primary-yellow); }
-.contact-layout { display:flex; flex-wrap:wrap; gap:2rem; align-items:center; justify-content:center; }
+.contact-layout { display:flex; flex-direction:row; flex-wrap:wrap; gap:2rem; align-items:center; justify-content:center; background:var(--royal-blue); border-radius:24px; padding:2rem; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 .contact-layout .photo { flex:1; min-width:280px; }
 .contact-layout .photo img { width:100%; max-width:400px; border-radius:20px; box-shadow:0 12px 30px rgba(0,0,0,.15); }
 .contact-layout .panel { flex:1; min-width:280px; }
