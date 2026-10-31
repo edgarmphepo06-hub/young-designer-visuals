@@ -195,7 +195,6 @@
             <a href="https://wa.me/+265983176345" class="get-touch-btn" target="_blank">GET IN TOUCH</a>
         </div>
         <div class="photo">
-            <img src="contact us.jpeg" alt="Contact Photo">
         </div>
     </div>
 <!-- Footer -->
@@ -203,7 +202,7 @@
         <div class="footer-content">
             <span>Young Designer Visuals</span>
             <span>Creative | Professional | Purposeful</span>
-            <span>Copyright © 2026 Young Designer Visuals</span>
+            <span id="copyrightYear">Copyright © 2026 Young Designer Visuals</span>
             <a href="https://nadadigital.net/" target="_blank">Developed by NADA</a>
         </div>
     </footer>
@@ -220,6 +219,9 @@ function setActive(){
   navLinks.forEach(a=>{ a.classList.toggle('active', a.getAttribute('href')==='#'+current); });
 }
 window.addEventListener('scroll',setActive); setActive();
+// Auto-update copyright year after Jan 1 2027
+(function(){ var el=document.getElementById('copyrightYear'); if(el){ var now=new Date(); var year=now>=new Date('2027-01-01')?2027:2026; el.textContent='Copyright © '+year+' Young Designer Visuals'; } })();
+</script>
 </script>
 </body>
 </html>
